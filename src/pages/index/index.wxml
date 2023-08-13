@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="h-[100px] w-[100px] bg-slate-400 flex justify-center items-center text-white blod">Tailwxss</view>
+</view>
