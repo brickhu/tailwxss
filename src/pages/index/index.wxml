@@ -1,4 +1,17 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="h-[100px] w-[100px] bg-slate-400 flex justify-center items-center text-white blod">Tailwxss</view>
+  <button class="btn" bind:tap="handleOpen">open</button>
+  <m-buttton ref="mybtn" id="mybtn" class="mbtn">d</m-buttton>
+  <dialog ref="myModal" class="modal" data-open="false" data-mask>
+    <form method="dialog" class="modal-box">
+      <h3 class="font-bold text-lg">Hello!</h3>
+      <p class="py-4">Press ESC key or click the button below to close</p>
+      <div class="modal-action">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </div>
+    </form>
+  </dialog>
+  
+  <!-- <view  class="w-20 h-20 bg-cover bg-gradient-to-t from-cyan-500 to-blue-500 bg-[url('https://blendicons.s3.eu-central-1.amazonaws.com/files/yDk5mLczVaLEKE2MT93_.svg')] bg-contain bg-no-repeat"></view> -->
 </view>

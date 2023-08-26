@@ -74,9 +74,27 @@ const plugins = [
         from: '**/*',
         to: '',
         globOptions: {
-          ignore: ['**/*.js', '**/*.scss'],
+          ignore: ['**/*.js', '**/*.scss','**/ui/**'],
         },
+        priority: 1,
       },
+      // {
+      //   from: 'ui/**/*',
+      //   to: '',
+       
+      //   filter:(r)=>{
+      //     const idx = r.indexOf('.')
+      //     const currentPath = r.substring(0,idx)
+      //     const used = require(SRCDIR+'/app.json').usingComponents
+      //     const usePath = Object.values(used).map(a=>SRCDIR+'/'+a)
+      //     return usePath.includes(currentPath)
+      //   },
+      //   // globOptions: {
+      //   //   ignore: ['ui/**/*.js', 'ui/**/*.scss'],
+      //   // },
+      //   priority: 2,
+      // },
+      
     ],
   }),
   new WxRuntimeChunk(),
@@ -121,7 +139,7 @@ const config = {
     ignored: ['**/node_modules', '**/json'],
     poll: 1000,
   },
-  entry: { app: './app.js' },
+  entry: getEntries(SRCDIR, { app: './app.js' }),
   output: {
     path: resolve(__dirname, 'dist'),
     filename: ISPROD ? '[contenthash:5].js' : '[name].js',
@@ -132,7 +150,7 @@ const config = {
   },
   resolve: {
     alias: {
-      '@': SRCDIR,
+      '@': resolve(__dirname,''),
     },
     extensions: ['.js', '.json'],
   },
@@ -187,18 +205,18 @@ const config = {
           'sass-loader',
         ],
       },
-      {
-        test: /\.(jpg|jpeg|png|webp|gif)$/,
-        type: 'asset',
-        generator: {
-          filename: 'assets/[name].[ext]'
-        },
-        parser: {
-          dataUrlCondition: {
-            maxSize: 100 * 1024
-          }
-        }
-      }
+      // {
+      //   test: /\.(jpg|jpeg|png|webp|gif)$/,
+      //   type: 'asset',
+      //   generator: {
+      //     filename: 'assets/[name].[ext]'
+      //   },
+      //   parser: {
+      //     dataUrlCondition: {
+      //       maxSize: 100 * 1024
+      //     }
+      //   }
+      // }
     ],
   },
   plugins,
@@ -229,5 +247,5 @@ const config = {
 }
 
 
-config.entry = getEntries(SRCDIR, config.entry)
+// config.entry = getEntries(SRCDIR, config.entry)
 module.exports = config

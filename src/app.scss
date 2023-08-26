@@ -1,6 +1,37 @@
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 .container{
   color: ddd;
   text-align: center;
+}
+
+// @layer components {
+//   .modal{
+//     @apply h-full w-full bg-black/50 z-50 fixed top-0 left-0 flex justify-center items-center;
+//     form{
+//       @apply m-10 bg-white rounded-3xl p-10;
+//     }
+//   }
+// }
+
+
+@layer base{
+  dialog{
+    @apply h-full w-full  z-30 fixed top-0 left-0 flex justify-center items-center ;
+    &[data-mask]{
+      @apply before:content-[''] before:absolute before:h-full before:w-full before:top-0 before:left-0 before:z-40 before:block before:bg-black/50;
+    }
+    &[data-open='true']{
+      @apply visible;
+      
+    }
+    &[data-open='false']{
+      @apply hidden;
+    }
+    form{
+      @apply m-10 bg-white rounded-3xl p-10 z-50;
+    }
+  }
 }

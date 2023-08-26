@@ -9,9 +9,10 @@
     "navigationBarTextStyle":"black",
     "navigationStyle": "custom"
   },
+  "usingComponents": {
+    "m-button":"./componets/button/button"
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "usingComponents": {
-  },
   "lazyCodeLoading": "requiredComponents"
 }

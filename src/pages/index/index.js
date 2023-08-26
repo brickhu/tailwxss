@@ -1,6 +1,6 @@
 // index.js
 
-
+const app = getApp()
 Page({
   data: {
   
@@ -9,10 +9,16 @@ Page({
   bindViewTap() {
   },
   onLoad() {
-
+    
   },
   onReady(){
     
   },
+  handleOpen(e){
+    // console.log('打开',e)
+    // console.log('myModal: ', this.myModal);
+    const child = this.selectComponent('.mbtn');
+    console.log(child)
+  }
  
 })

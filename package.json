@@ -27,6 +27,7 @@
     "cross-env": "^7.0.3",
     "dart-sass": "^1.25.0",
     "ensure-posix-path": "^1.1.1",
+    "fei-ui-test": "^1.0.0",
     "file-loader": "^6.2.0",
     "glob": "^8.0.3",
     "loader-utils": "^2.0.0",
@@ -41,5 +42,8 @@
     "webpack": "^5.69.1",
     "webpack-cli": "^4.8.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "md5": "^2.3.0",
+    "mind-ui-weapp": "^1.1.1"
+  }
 }
