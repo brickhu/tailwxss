@@ -1,3 +1,0 @@
-<button class="{{className||'btn'}}"  bindtap="onTap">
-  <slot></slot>
-</button>

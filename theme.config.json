@@ -1,0 +1,46 @@
+{
+  "themes": [
+    {
+      "name": "light",
+      "colors": {
+        "primary": {
+          "DEFAULT":  "#219fd6",
+          "contrast": "#219fd6",
+          "light":    "#12577a",
+          "thick":    "#144866"
+        },
+        "secondary": {
+          "DEFAULT":  "#e64e3d",
+          "contrast": "#fdf4f3",
+          "light":    "#fcd1cc",
+          "thick":    "#7b2a21"
+        },
+        "danger": {
+          "DEFAULT":  "#f04c4c",
+          "contrast": "#fef2f2",
+          "light":    "#fecaca",
+          "thick":    "#7f1d1d"
+        },
+        "warning": {
+          "DEFAULT":  "#f2e236",
+          "contrast": "#402608",
+          "light":    "#f9f88f",
+          "thick":    "#6d4916"
+        },
+        "info": {
+          "DEFAULT":  "#fff000",
+          "contrast": "#fff000",
+          "light":    "#fff000",
+          "thick":    "#fff000"
+        }
+      }
+    },
+    {
+      "name": "dark"
+    }
+  ],
+  "configs": {
+    "defaultTheme": "light"
+  },
+  "metadata":{}
+}

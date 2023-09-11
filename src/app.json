@@ -10,9 +10,7 @@
     "navigationStyle": "custom"
   },
   "usingComponents": {
-    "m-button":"./componets/button/button"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
 }

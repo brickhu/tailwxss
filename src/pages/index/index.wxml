@@ -1,17 +1,40 @@
 <!--index.wxml-->
 <view class="container">
-  <button class="btn" bind:tap="handleOpen">open</button>
-  <m-buttton ref="mybtn" id="mybtn" class="mbtn">d</m-buttton>
-  <dialog ref="myModal" class="modal" data-open="false" data-mask>
-    <form method="dialog" class="modal-box">
-      <h3 class="font-bold text-lg">Hello!</h3>
-      <p class="py-4">Press ESC key or click the button below to close</p>
-      <div class="modal-action">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
-      </div>
-    </form>
-  </dialog>
+  <h1>page title</h1>
+  <view class="flex flex-col m-2 pt-10">
+    <text class=" text-xs">xs</text>
+    <text class=" text-sm">sm</text>
+    <text class=" text-md">md</text>
+    <text class=" text-base ">md</text>
+    <text class=" text-lg">lg</text>
+    <text class=" text-xl">xl</text>
+    <text class=" text-2xl">2xl</text>
+    <text class=" text-3xl">3xl</text>
+    <text class=" text-4xl">4xl</text>
+    <text class=" text-5xl">5xl</text>
+    <text class=" text-6xl">6xl</text>
+    <text class=" text-6xl">7xl</text>
+    <text class=" text-6xl text-haha">8xl</text>
+  </view>
   
-  <!-- <view  class="w-20 h-20 bg-cover bg-gradient-to-t from-cyan-500 to-blue-500 bg-[url('https://blendicons.s3.eu-central-1.amazonaws.com/files/yDk5mLczVaLEKE2MT93_.svg')] bg-contain bg-no-repeat"></view> -->
+  <view class="flex flex-col pt-10">
+     <button class="btn w-[320rpx] m-2">
+    <i class="icon-[charm--home]"></i>
+    <text>icon</text>
+    </button>
+    <button class="btn btn-xl w-[320rpx] m-2">open</button>
+    <button class="btn btn-lg btn-round m-2">open</button>
+    <button class="btn btn-danger m-2">open</button>
+    <button class="btn btn-secondary m-2">open</button>
+    <button class="btn btn-lg btn-primary btn-round m-2" disabled="{{true}}" loading="{{true}}">open</button>
+    <button class="btn btn-sm btn-primary btn-round btn-outline w-fit m-2">open</button>
+  </view>
+ 
+  <view class="flex gap-6 m-2 pt-10">
+    <view class=" w-8 justify-center items-center flex aspect-square rounded-full" style="background:hsl(0 100% 30%)"> </view>
+    <view class=" w-8 justify-center items-center flex aspect-square rounded-full" style="background:hsl(0 100% 50%)"> </view>
+    <view class=" w-8 justify-center items-center flex aspect-square rounded-full" style="background:hsl(0 100% 80%)"> </view>
+    <view class=" w-8 justify-center items-center flex aspect-square rounded-full bg-dede-100 text-dede-100-on"> ffffff</view>
+  </view>
 </view>
+
