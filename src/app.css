@@ -1,0 +1,46 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+page,
+view,
+text,
+image,
+button,
+video,
+map,
+scroll-view,
+swiper,
+input,
+textarea,
+navigator {
+  position: relative;
+  box-sizing: border-box;
+  background-origin: border-box;
+  isolation: isolate;
+}
+page {
+  height: 100%;
+}
+navigator text,
+text text,
+text navigator {
+  display: inline;
+}
+
+
+
+@layer base{
+  .container{
+    @apply text-ink bg-s0;
+  }
+}
+
+@layer components {
+  .a{
+    @apply text-ink bg-s0;
+    &-t{
+      @apply text-ink bg-s0;
+    }
+  }
+}

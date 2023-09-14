@@ -1,0 +1,103 @@
+.time{
+  @apply text-primary-ink bg-primary border-primary-ink text-5xl;
+}
+
+
+.btn{
+  @apply leading-none flex justify-center items-center font-bold box-border gap-[--gp,0.8em] text-[--c] bg-[--bg] m-0;
+  border-radius: var(--r,var(--round-btn,0.5rem));
+  border: var(--bd);
+  &::before{
+    @apply border-none;
+  };
+  &::after{
+    @apply border-none;
+  };
+  &:hover{
+    @apply bg-[--c-hover];
+  }
+  &,&-md{
+    @apply text-base px-[1.6em] py-[0.8em];
+  };
+  &-sm{
+    @apply text-sm px-[1em] py-[0.5em];
+  };
+  &-lg{
+    @apply text-lg px-[1.6em] py-[0.9em];
+  };
+  &-xl{
+    @apply text-xl px-[2em] py-[1em];
+  };
+  &{
+    --c-bg: theme(colors.s2);
+    --c-text: theme(colors.ink);
+    --c-focus: theme(colors.s3)
+  }
+  &-neutral{
+    --c-bg: theme(colors.neutral.DEFAULT);
+    --c-text: theme(colors.neutral.ink);
+    --c-focus: theme(colors.neutral.focus)
+  };
+  &-primary{
+    --c-bg: theme(colors.primary.DEFAULT);
+    --c-text: theme(colors.primary.ink);
+    --c-focus: theme(colors.primary.focus)
+  };
+  &-secondary{
+    --c-bg: theme(colors.secondary.DEFAULT);
+    --c-text: theme(colors.secondary.ink);
+    --c-focus: theme(colors.secondary.focus)
+  };
+  &-error{
+    --c-bg: theme(colors.error.DEFAULT);
+    --c-text: theme(colors.error.ink);
+    --c-focus: theme(colors.error.focus)
+  };
+  &-info{
+    --c-bg: theme(colors.info.DEFAULT);
+    --c-text: theme(colors.info.ink);
+    --c-focus: theme(colors.info.focus)
+  };
+  &-warning{
+    --c-bg: theme(colors.warning.DEFAULT);
+    --c-text: theme(colors.warning.ink);
+    --c-focus: theme(colors.warning.focus)
+  };
+  &,&-fill{
+    --c: var(--c-text);
+    --bg: var(--c-bg);
+    --bd: solid 1px var(--c-bg);
+  };
+  &-outline{
+    --c: var(--c-bg);
+    --bg: transparent;
+    --bd: solid 1px currentcolor !important;
+  };
+  &-text{
+    --c: var(--c-bg);
+    --bg: transparent;
+    --bd: 0;
+  };
+  &-corner{
+    --r: 0
+  };
+  &-round{
+    --r: 9999px
+  };
+  &[disabled],&-disabled{
+    @apply text-[--c] bg-[--bg] border-none overflow-hidden;
+    &::after{
+      @apply bg-s2/80 w-[9999px] h-[9999px] -left-1 -top-1;
+    }
+  }
+  &[loading]{
+    &::before{
+      @apply hidden;
+    }
+  }
+}
+
+
+.mphead {
+  @apply bg-s1 text-ink text-lg;
+}

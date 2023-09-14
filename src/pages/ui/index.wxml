@@ -37,12 +37,15 @@
     <button class="btn btn-primary">primary</button>
     <button class="btn btn-secondary">secondary</button>
     <button class="btn">default</button>
+    <button class="btn btn-neutral">neutral</button>
+    <button class="btn btn-error">error</button>
+    <button class="btn btn-warning ">warning</button>
   </view>
 
  <view class="p-2">button/size</view>
  <view class="flex gap-2 m-2 flex-wrap items-start justify-start">
     <button class="btn btn-sm btn-primary btn-round btn-outline w-auto">sm</button>
-    <button class="btn btn-primary btn-round btn-outline w-auto"  >md</button>
+    <button class="btn btn-primary btn-round btn-outline w-auto" >md</button>
     <button class="btn btn-lg btn-primary btn-round btn-outline w-auto " >lg</button>
     <button class="btn btn-xl btn-primary btn-round btn-outline w-auto">xl</button>
   </view>

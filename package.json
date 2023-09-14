@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "prebase": "node ds/build.js",
     "dev": "cross-env NODE_ENV=development BUILD_TARGET=WECHAT webpack --watch --progress --mode=development",
-    "build": "webpack --progress --mode=production"
+    "build": "npm run prebase && webpack --progress --mode=production"
   },
   "keywords": [
     "webpack",
@@ -29,14 +30,16 @@
     "colored": "^0.0.15",
     "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.3",
+    "css-minimizer-webpack-plugin": "^5.0.1",
     "daisyui": "^3.7.3",
     "dart-sass": "^1.25.0",
     "ensure-posix-path": "^1.1.1",
     "fei-ui-test": "^1.0.0",
     "file-loader": "^6.2.0",
-    "glob": "^8.0.3",
+    "glob": "^10.3.4",
     "loader-utils": "^2.0.0",
     "postcss": "^8.4.6",
+    "postcss-js": "^4.0.1",
     "postcss-loader": "^6.2.1",
     "replace-ext": "^2.0.0",
     "required-path": "^1.0.1",

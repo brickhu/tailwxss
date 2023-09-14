@@ -13,5 +13,8 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  onThemeChange(e){
+    console.log('切换皮肤',e)
   }
 })

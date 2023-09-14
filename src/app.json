@@ -1,6 +1,7 @@
 {
   "pages":[
-    "pages/index/index"
+    "pages/index/index",
+    "pages/ui/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -12,5 +13,6 @@
   "usingComponents": {
   },
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "darkmode":true
 }

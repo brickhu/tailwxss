@@ -9,6 +9,7 @@ const requiredPath = require('required-path')
 const fs = require('fs')
 const replaceExt = require('replace-ext')
 const ensurePosixPath = require('ensure-posix-path')
+const glob =require('glob')
 
 // 常量
 const assetsChunkName = 'assetsChunkName'
@@ -67,6 +68,9 @@ class WxRuntimeChunk {
 const plugins = [
   new UnifiedWebpackPluginV5({
     appType: 'native',
+    customAttributes:{
+      '*': [ /[A-Za-z]?[A-Za-z-]*[Cc]lass/,'hover-class' ]
+    }
   }),
   new CopyWebpackPlugin({
     patterns: [
@@ -74,27 +78,10 @@ const plugins = [
         from: '**/*',
         to: '',
         globOptions: {
-          ignore: ['**/*.js', '**/*.scss','**/ui/**'],
+          ignore: ['**/*.js', '**/*.(scss|css|sass)'],
         },
         priority: 1,
       },
-      // {
-      //   from: 'ui/**/*',
-      //   to: '',
-       
-      //   filter:(r)=>{
-      //     const idx = r.indexOf('.')
-      //     const currentPath = r.substring(0,idx)
-      //     const used = require(SRCDIR+'/app.json').usingComponents
-      //     const usePath = Object.values(used).map(a=>SRCDIR+'/'+a)
-      //     return usePath.includes(currentPath)
-      //   },
-      //   // globOptions: {
-      //   //   ignore: ['ui/**/*.js', 'ui/**/*.scss'],
-      //   // },
-      //   priority: 2,
-      // },
-      
     ],
   }),
   new WxRuntimeChunk(),
@@ -125,7 +112,8 @@ function getEntries(context, entry){
   })
   entries[assetsChunkName] = 
       [...Object.values(entries)].map((entry) => 
-          ensurePosixPath(replaceExt(entry, '.scss')))
+          ensurePosixPath(replaceExt(entry, '.css')))
+  console.log('-------',entries)
   return entries
 }
 
@@ -182,7 +170,7 @@ const config = {
         }
       },
       {
-        test: /\.s(a|c)ss$/,
+        test: /\.(sa|sc|c)ss$/,
         include: /src/,
         use: [
           {
@@ -238,7 +226,7 @@ const config = {
           priority: 0,
         },
       },
-    },
+    }
   },
   devtool: false,
   cache: {
