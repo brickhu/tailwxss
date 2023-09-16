@@ -13,70 +13,97 @@
   &::after{
     @apply border-none;
   };
-  &:hover{
-    @apply bg-[--c-hover];
+  &:hover,&-hover{
+    @apply bg-[--f-bg] text-[--f-c];
   }
   &,&-md{
-    @apply text-base px-[1.6em] py-[0.8em];
+    @apply text-base px-[1.4rem] h-12 py-0;
   };
   &-sm{
-    @apply text-sm px-[1em] py-[0.5em];
+    @apply text-sm px-[0.8rem] h-10 py-0;
   };
   &-lg{
-    @apply text-lg px-[1.6em] py-[0.9em];
+    @apply text-lg px-[1.8rem] h-14 py-0;
   };
   &-xl{
-    @apply text-xl px-[2em] py-[1em];
+    @apply text-xl px-[2.6rem] h-16 py-0;
   };
   &{
-    --c-bg: theme(colors.s2);
-    --c-text: theme(colors.ink);
-    --c-focus: theme(colors.s3)
+    --v: theme(colors.s2);
+    --v-ink: theme(colors.ink);
+    --v-fc: theme(colors.s3);
+    &.btn-outline{
+      --v: theme(colors.ink)
+    }
   }
   &-neutral{
-    --c-bg: theme(colors.neutral.DEFAULT);
-    --c-text: theme(colors.neutral.ink);
-    --c-focus: theme(colors.neutral.focus)
+    --v: theme(colors.neutral.DEFAULT);
+    --v-ink: theme(colors.neutral.ink);
+    --v-fc: theme(colors.neutral.focus);
+    &.btn-outline{
+      --v: theme(colors.neutral.DEFAULT)
+    }
   };
   &-primary{
-    --c-bg: theme(colors.primary.DEFAULT);
-    --c-text: theme(colors.primary.ink);
-    --c-focus: theme(colors.primary.focus)
+    --v: theme(colors.primary.DEFAULT);
+    --v-ink: theme(colors.primary.ink);
+    --v-fc: theme(colors.primary.focus);
+    &.btn-outline{
+      --v: theme(colors.primary.DEFAULT)
+    }
   };
   &-secondary{
-    --c-bg: theme(colors.secondary.DEFAULT);
-    --c-text: theme(colors.secondary.ink);
-    --c-focus: theme(colors.secondary.focus)
+    --v: theme(colors.secondary.DEFAULT);
+    --v-ink: theme(colors.secondary.ink);
+    --v-fc: theme(colors.secondary.focus);
+    &.btn-outline{
+      --v: theme(colors.secondary.DEFAULT)
+    }
   };
   &-error{
-    --c-bg: theme(colors.error.DEFAULT);
-    --c-text: theme(colors.error.ink);
-    --c-focus: theme(colors.error.focus)
+    --v: theme(colors.error.DEFAULT);
+    --v-ink: theme(colors.error.ink);
+    --v-fc: theme(colors.error.focus);
+    &.btn-outline{
+      --v: theme(colors.error.DEFAULT)
+    }
   };
   &-info{
-    --c-bg: theme(colors.info.DEFAULT);
-    --c-text: theme(colors.info.ink);
-    --c-focus: theme(colors.info.focus)
+    --v: theme(colors.info.DEFAULT);
+    --v-ink: theme(colors.info.ink);
+    --v-fc: theme(colors.info.focus);
+    &.btn-outline{
+      --v: theme(colors.info.DEFAULT)
+    }
   };
   &-warning{
-    --c-bg: theme(colors.warning.DEFAULT);
-    --c-text: theme(colors.warning.ink);
-    --c-focus: theme(colors.warning.focus)
+    --v: theme(colors.warning.DEFAULT);
+    --v-ink: theme(colors.warning.ink);
+    --v-fc: theme(colors.warning.focus);
+    &.btn-outline{
+      --v: theme(colors.warning.DEFAULT)
+    }
   };
   &,&-fill{
-    --c: var(--c-text);
-    --bg: var(--c-bg);
-    --bd: solid 1px var(--c-bg);
+    --c: var(--v-ink);
+    --bg: var(--v);
+    --bd: solid 1px var(--v);
+    --f-c: var(--v);
+    --f-bg: var(--v-ink)
   };
   &-outline{
-    --c: var(--c-bg);
+    --c: var(--v);
     --bg: transparent;
     --bd: solid 1px currentcolor !important;
+    --f-c: var(--v-fc);
+    --f-bg: var(--v)
   };
   &-text{
-    --c: var(--c-bg);
+    --c: var(--v);
     --bg: transparent;
     --bd: 0;
+    --f-c: var(--v-ink);
+    --f-bg: var(--v)
   };
   &-corner{
     --r: 0
@@ -97,7 +124,3 @@
   }
 }
 
-
-.mphead {
-  @apply bg-s1 text-ink text-lg;
-}

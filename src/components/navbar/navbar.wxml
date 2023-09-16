@@ -1,0 +1,19 @@
+<view class="class z-[8888]" style="height:{{ height }}px;">
+    <view wx:if="{{ fixed && placeholder }}" style="height:{{ height }}px;" class="top-0 left-0 w-full bg-transparent"/>
+    <view class="z-[9999] top-0 left-0 w-full text-neutral-ink flex items-center justify-between {{fixed?'fixed':'static'}} {{show?'visible':'invisible'}} {{show?'opacity-100':'opacity-0'}} {{animated?'transition-all':''}}" style="height:{{ height }}px; padding-top:{{ safeTop }}px;">
+      <view class="header-l w-14 flex items-center justify-start ml-3 rui-icon">
+        <text wx:if="{{ back }}" class="{{ _isRootPage?'icon-[charm--home]':'icon-[charm--arrow-left]' }} text-xl" bindtap="handleBack"></text>
+        <slot name="left" wx:else></slot>
+      </view>
+      <view class="flex-1 text-center justify-center flex rui-text">
+        <block wx:if="{{ title }}">
+          <text class="text-lg" wx:if="{{loadding}}"></text>
+          <text class="text-lg font-semibold" wx:else>{{ title }}</text>
+        </block>
+        <block wx:else>
+          <slot name="center"></slot>
+        </block>
+      </view>
+      <view class="header-r w-14 flex items-center justify-end mr-3"></view>
+    </view>
+  </view>

@@ -185,7 +185,8 @@ const config = {
             options: {
               postcssOptions: {
                 plugins: [
-                  'tailwindcss','autoprefixer'
+                  'tailwindcss',
+                  'autoprefixer'
                 ]
               }
             }

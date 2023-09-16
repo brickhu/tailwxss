@@ -2,7 +2,7 @@ const { colord,extend, getFormat } = require('colord')
 const mix = require("colord/plugins/mix")
 extend([mix]);
 
-const BASE_COLORS = ['ink','s-0','s0','s1','s2','s3']
+const BASE_COLORS = ['ink','s_0','s0','s1','s2','s3']
 const FUCTIONAL_COLORS = ['error','success','warning','info']
 const BRAND_COLORS = ['primary','neutral','secondary']
 const SUB_COLORS = ['DEFAULT','ink','focus']
@@ -34,7 +34,9 @@ const parseHexToRgbValue = (hex) => {
 
 // 扩展颜色
 const extendFullColors = function(hexObj) {
-  const {ink} = hexObj
+  const {ink,s_0=null,s0=null,s1=null,s2=null,s3=null,primary=null,secondary=null,neutral=null} = hexObj
+  console.log('ink: ', ink);
+  const hex = {}
   const isDark = colord(ink).isDark()
   const bright = colord(ink).brightness()
   // const mc = isDark?"#ffffff":"#000000"
@@ -42,37 +44,51 @@ const extendFullColors = function(hexObj) {
   if(isDark){
     let tints = []
     tints = colord(ink).tints(stp).map(c=>c.toHex())
-    hexObj['s1'] = hexObj['s1']||tints[stp-2]
-    hexObj['s2'] = hexObj['s2']||tints[stp-3]
-    hexObj['s3'] = hexObj['s3']||tints[stp-4]
+    hex['s1'] = s1||tints[stp-2]
+    hex['s2'] = s2||tints[stp-3]
+    hex['s3'] = s3||tints[stp-4]
   }else{
     let shades = []
     shades = colord(ink).shades(stp).map(c=>c.toHex())
-    hexObj['s1'] = shades[stp-4]
-    hexObj['s2'] = shades[stp-3]
-    hexObj['s3'] = shades[stp-2]
+    hex['s1'] = s1||shades[stp-4]
+    hex['s2'] = s2||shades[stp-3]
+    hex['s3'] = s3||shades[stp-2]
   }
   
-  hexObj['s-0'] = isDark?"#000000":"#ffffff"
-  hexObj['s0'] = isDark?"#ffffff":"#000000"
-  hexObj['error']  = hexObj['error']||colord("#FF3030").mix(ink,0.2).toHex()
-  hexObj['success']  = hexObj['success']||colord("#00FF00").mix(ink,0.2).toHex()
-  hexObj['warning']  = hexObj['warning']||colord("#FCE300").mix(ink,0.1).toHex()
-  hexObj['info']  = hexObj['info']||colord("#00A2FD").mix(ink,0.2).toHex()
+  hex['s_0'] = s_0||(isDark?"#000000":"#ffffff")
+  hex['s0'] = s0||(isDark?"#ffffff":"#000000")
+  hex['error']  = colord("#FF3030").mix(ink,0.2).toHex()
+  hex['success']  = colord("#00FF00").mix(ink,0.2).toHex()
+  hex['warning']  = colord("#FCE300").mix(ink,0.1).toHex()
+  hex['info']  = colord("#00A2FD").mix(ink,0.2).toHex()
+  hex['primary'] = primary
+  hex['secondary'] = secondary
+  hex['neutral'] = neutral
+  hex['ink'] = ink
 
-  for (let key in hexObj) {
+  for (let key in hex) {
     if(BASE_COLORS.indexOf(key)<=-1){
-      const v = hexObj[key]
-      const isDark = colord(v).isDark()
-      hexObj[key]= {
-        DEFAULT: v,
-        ink: colord(v).mix(isDark?"#ffffff":"#000000",0.9).toHex(),
-        focus: colord(v).mix(isDark?"#ffffff":"#000000",0.1).toHex()
+      const v = hex[key]
+      if(typeof(v)==='string'){
+        const isDark = colord(v).isDark()
+        hex[key]= {
+          DEFAULT: v,
+          ink: colord(v).mix(isDark?"#ffffff":"#000000",0.9).toHex(),
+          focus: colord(v).mix(isDark?"#000000":"#ffffff",0.1).toHex()
+        }
+      }else if(typeof(v)==='object'){
+        const {DEFAULT="eeff00",ink=null,focus=null} = v
+        hex[key]= {
+          DEFAULT,
+          ink: ink||colord(DEFAULT).mix(isDark?"#ffffff":"#000000",0.9).toHex(),
+          focus: focus||colord(DEFAULT).mix(isDark?"#000000":"#ffffff",0.1).toHex()
+        }
       }
+      
     }
   }
-
-  return hexObj
+  console.log(hex)
+  return hex
 }
 
 

@@ -5,6 +5,9 @@
     "ignore": [],
     "include": []
   },
+  "scripts": {
+    "beforeCompile": "yarn webpack --progress --mode=development"
+  },
   "setting": {
     "urlCheck": false,
     "es6": false,

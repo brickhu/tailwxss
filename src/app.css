@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-page,
+/* page,
 view,
 text,
 image,
@@ -26,7 +26,7 @@ navigator text,
 text text,
 text navigator {
   display: inline;
-}
+} */
 
 
 

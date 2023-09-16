@@ -11,6 +11,7 @@
     "navigationStyle": "custom"
   },
   "usingComponents": {
+    "navbar":"components/navbar/navbar"
   },
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",

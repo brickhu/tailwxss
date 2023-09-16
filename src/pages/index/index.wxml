@@ -1,13 +1,13 @@
 <!--index.wxml-->
-<scroll-view type="list" scroll-y class="container" data-theme="{{theme}}">
-  <view class="mphead">title</view>
-  <view class="time">time</view>
+<view class="container" data-theme="{{theme}}">
+  <navbar title="ui testing" fixed class="bg-black"></navbar>
+  <view class="h-40">dddddd</view>
   <h1>page title</h1>
   <view class="flex flex-col m-2 pt-10">
     <text class=" text-xs">xs</text>
     <text class=" text-sm">sm</text>
     <text class=" text-md">md</text>
-    <text class=" text-base ">md</text>
+    <text class=" text-base ">md----</text>
     <text class=" text-lg">lg</text>
     <text class=" text-xl">xl</text>
     <text class=" text-2xl">2xl</text>
@@ -20,22 +20,22 @@
   </view>
   
   <view class="flex flex-col pt-10">
-     <button class="btn w-[320rpx] m-2">
+     <button class="btn w-40 m-2 btn-outline" hover-class="btn-hover">
     <i class="icon-[charm--home]"></i>
     <text>icon</text>
     </button>
-    <button class="btn btn-xl w-[320rpx] m-2">open</button>
-    <button class="btn btn-lg btn-round m-2 btn-neutral">open</button>
-    <button class="btn btn-danger m-2" disabled="{{true}}">open</button>
-    <button class="btn btn-secondary m-2" disabled="{{true}}">open</button>
-    <button class="btn btn-lg btn-primary btn-round m-2" disabled="{{true}}" loading="{{true}}">open</button>
-    <button class="btn btn-xl btn-primary btn-round m-2" hover-class="bg-primary-foucus">open</button>
-    <button class="btn btn-sm btn-primary btn-round btn-outline w-fit m-2"  hover-class="bg-primary-focus">open</button>
+    <button class="btn btn-xl w-[320rpx] m-2" hover-class="btn-hover">open</button>
+    <button class="btn btn-lg btn-round m-2 btn-neutral" hover-class="btn-hover">open</button>
+    <button class="btn btn-danger m-2" disabled="{{true}}" hover-class="btn-hover">open</button>
+    <button class="btn btn-secondary m-2" disabled="{{true}}" hover-class="btn-hover">open</button>
+    <button class="btn btn-lg btn-primary btn-round m-2" disabled="{{true}}" loading="{{true}}" hover-class="btn-hover">open</button>
+    <button class="btn btn-xl btn-primary btn-round m-2" hover-class="btn-hover">open</button>
+    <button class="btn btn-sm btn-primary btn-round btn-outline w-fit m-2"  hover-class="btn-hover">open</button>
   </view>
  <view class="p-2">button/colors</view>
  <view class="flex flex-col m-2 gap-2">
-    <button class="btn btn-primary">primary</button>
-    <button class="btn btn-secondary">secondary</button>
+    <button class="btn btn-primary" hover-class="btn-hover">中文按钮</button>
+    <button class="btn btn-secondary" hover-class="btn-hover">secondary</button>
     <button class="btn">default</button>
   </view>
 
@@ -43,15 +43,15 @@
  <view class="flex gap-2 m-2 flex-wrap items-start justify-start">
     <button class="btn btn-sm btn-primary btn-round btn-outline w-auto">sm</button>
     <button class="btn btn-primary btn-round btn-outline w-auto"  >md</button>
-    <button class="btn btn-lg btn-primary btn-round btn-outline w-auto " >lg</button>
+    <button class="btn btn-lg btn-primary btn-round btn-outline w-auto " hover-class="bg-primary-focus">lg</button>
     <button class="btn btn-xl btn-primary btn-round btn-outline w-auto">xl</button>
   </view>
 
   
   <view class="flex gap-6 m-2 flex-wrap pt-10">
     <view class=" w-16 justify-center items-center flex aspect-square rounded-full bg-neutral text-neutral-ink text-xs">neutral</view>
-    <view class=" w-16 justify-center items-center flex aspect-square rounded-full bg-primary text-primary-ink text-xs">primary</view>
-    <view class=" w-16 justify-center items-center flex aspect-square rounded-full bg-secondary text-secondary-ink text-xs">secondary</view>
+    <view class=" w-16 justify-center items-center flex aspect-square rounded-full bg-primary text-primary-ink text-xs" hover-class="btn-hover">primary</view>
+    <view class=" w-16 justify-center items-center flex aspect-square rounded-full bg-secondary text-secondary-ink text-xs" hover-class="btn-hover">secondary</view>
     <view class=" w-16 justify-center items-center flex aspect-square rounded-full bg-error text-error-ink/50 text-xs">error</view>
     <view class=" w-16 justify-center items-center flex aspect-square rounded-full bg-warning text-warning-ink text-xs">warning</view>
     <view class=" w-16 justify-center items-center flex aspect-square rounded-full bg-info text-info-ink text-xs">info</view>
@@ -61,5 +61,5 @@
     <view class=" w-16 justify-center items-center flex aspect-square rounded-full bg-s3 text-ink text-xs">s3</view>
     <view class="a"><view class="a-t">dddd</view></view>
   </view>
-</scroll-view>
+</view>
 

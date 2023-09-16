@@ -1,5 +1,8 @@
 <!--index.wxml-->
-<scroll-view type="list" scroll-y class="container" data-theme="{{theme}}">
+<navbar title="ui testing"></navbar>
+<view class="w-20 h-20 bg-black">dd</view>
+<view class="container bg-s0" data-theme="{{theme}}">
+  
   <view class="mphead">title</view>
   <view class="time">time</view>
   <h1>page title</h1>
@@ -40,6 +43,7 @@
     <button class="btn btn-neutral">neutral</button>
     <button class="btn btn-error">error</button>
     <button class="btn btn-warning ">warning</button>
+    <button class="btn btn-sucesss ">warning</button>
   </view>
 
  <view class="p-2">button/size</view>
@@ -64,5 +68,5 @@
     <view class=" w-16 justify-center items-center flex aspect-square rounded-full bg-s3 text-ink text-xs">s3</view>
     <view class="a"><view class="a-t">dddd</view></view>
   </view>
-</scroll-view>
+</view>
 
